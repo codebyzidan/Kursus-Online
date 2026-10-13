@@ -1,0 +1,9 @@
+/*
+| Stylesheet utama.
+| - Tailwind v4 (via @tailwindcss/vite)
+| - Basecoat UI (komponen + token shadcn)
+| - theme.css (token & arah visual proyek, lihat AGENTS.md §4)
+*/
+@import 'tailwindcss';
+@import 'basecoat-css';
+@import './theme.css';

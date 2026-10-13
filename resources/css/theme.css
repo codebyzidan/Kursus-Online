@@ -1,0 +1,112 @@
+/*
+|--------------------------------------------------------------------------
+| Token warna & arah visual proyek
+|--------------------------------------------------------------------------
+| Basecoat sudah menyediakan token dasar shadcn. Di sini kita sesuaikan
+| agar cocok dengan AGENTS.md §4: latar halaman abu sangat terang, kartu
+| putih, aksen hitam, chart netral, plus token status (success/warning/danger).
+|
+| Semua warna di view WAJIB memakai token ini, bukan hex atau warna Tailwind
+| mentah (dilarang `bg-blue-500`).
+*/
+
+:root {
+    --background: oklch(0.985 0 0);
+    --foreground: oklch(0.145 0 0);
+    --card: oklch(1 0 0);
+    --card-foreground: oklch(0.145 0 0);
+    --popover: oklch(1 0 0);
+    --popover-foreground: oklch(0.145 0 0);
+    --muted: oklch(0.97 0 0);
+    --muted-foreground: oklch(0.556 0 0);
+    --border: oklch(0.922 0 0);
+    --input: oklch(0.922 0 0);
+    --primary: oklch(0.205 0 0);
+    --primary-foreground: oklch(0.985 0 0);
+    --secondary: oklch(0.97 0 0);
+    --secondary-foreground: oklch(0.205 0 0);
+    --accent: oklch(0.97 0 0);
+    --accent-foreground: oklch(0.205 0 0);
+    --ring: oklch(0.708 0 0);
+    --radius: 0.625rem;
+    --sidebar: oklch(0.99 0 0);
+
+    --success: oklch(0.62 0.17 150);
+    --success-soft: oklch(0.96 0.04 150);
+    --warning: oklch(0.75 0.15 70);
+    --warning-soft: oklch(0.96 0.04 75);
+    --danger: oklch(0.58 0.2 25);
+    --danger-soft: oklch(0.96 0.03 25);
+
+    --chart-1: oklch(0.205 0 0);
+    --chart-2: oklch(0.85 0 0);
+    --chart-3: oklch(0.75 0.15 70);
+    --chart-4: oklch(0.7 0.12 230);
+    --chart-5: oklch(0.7 0.14 300);
+}
+
+.dark {
+    --background: oklch(0.145 0 0);
+    --foreground: oklch(0.985 0 0);
+    --card: oklch(0.205 0 0);
+    --card-foreground: oklch(0.985 0 0);
+    --popover: oklch(0.205 0 0);
+    --popover-foreground: oklch(0.985 0 0);
+    --muted: oklch(0.269 0 0);
+    --muted-foreground: oklch(0.708 0 0);
+    --border: oklch(1 0 0 / 10%);
+    --input: oklch(1 0 0 / 15%);
+    --primary: oklch(0.922 0 0);
+    --primary-foreground: oklch(0.205 0 0);
+    --secondary: oklch(0.269 0 0);
+    --secondary-foreground: oklch(0.985 0 0);
+    --accent: oklch(0.371 0 0);
+    --accent-foreground: oklch(0.985 0 0);
+    --ring: oklch(0.556 0 0);
+    --sidebar: oklch(0.205 0 0);
+
+    --success: oklch(0.72 0.17 150);
+    --success-soft: oklch(0.3 0.05 150);
+    --warning: oklch(0.8 0.15 75);
+    --warning-soft: oklch(0.32 0.05 75);
+    --danger: oklch(0.7 0.19 25);
+    --danger-soft: oklch(0.32 0.06 25);
+
+    --chart-1: oklch(0.985 0 0);
+    --chart-2: oklch(0.5 0 0);
+    --chart-3: oklch(0.8 0.15 75);
+    --chart-4: oklch(0.72 0.12 230);
+    --chart-5: oklch(0.75 0.14 300);
+}
+
+@theme {
+    --font-sans: 'Geist Variable', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+        'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+    --color-success: var(--success);
+    --color-success-soft: var(--success-soft);
+    --color-warning: var(--warning);
+    --color-warning-soft: var(--warning-soft);
+    --color-danger: var(--danger);
+    --color-danger-soft: var(--danger-soft);
+}
+
+/*
+|--------------------------------------------------------------------------
+| Keselamatan layout (anti overflow horizontal)
+|--------------------------------------------------------------------------
+| Item grid/flex punya `min-width: auto`, sehingga konten lebar (tabel banyak
+| kolom, canvas chart) dapat mendorong lebarnya dan memunculkan scroll pada
+| SELURUH halaman. Dengan `min-width: 0`, tabel menggulir di dalam
+| `.table-container`-nya sendiri dan chart menyesuaikan lebar kartu.
+| Catatan: tidak memakai `overflow-x: hidden` pada html/body.
+*/
+.card {
+    min-width: 0;
+}
+
+/* Wadah konten aplikasi tidak boleh melebar melebihi viewport. */
+.app-content {
+    min-width: 0;
+}
+
